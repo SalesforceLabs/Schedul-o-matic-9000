@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+  <labels>
+    <fullName>Anonymous_code_job_prefix</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Anonymous code job prefix</shortDescription>
+    <value>anonymous code</value>
+  </labels>
+  <labels>
+    <fullName>Anonymous_code_warning</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Anonymous code warning</shortDescription>
+    <value>Anonymous code runs in user mode. You can only do what you have permission to do!</value>
+  </labels>
+  <labels>
+    <fullName>Batch_size</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Batch size</shortDescription>
+    <value>What is the batch size? (leave blank to use the Salesforce default)</value>
+  </labels>
+  <labels>
+    <fullName>Batch_size_overflow</fullName>
+    <categories>input validation</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Batch size overflow</shortDescription>
+    <value>Batch size must be between 1 and 2000.</value>
+  </labels>
+  <labels>
+    <fullName>Batch_size_underflow</fullName>
+    <categories>input validation</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Batch size underflow</shortDescription>
+    <value>Batch size must be between 1 and 2000.</value>
+  </labels>
+  <labels>
+    <fullName>Class_input_placeholder</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Class input placeholder</shortDescription>
+    <value>Search classes...</value>
+  </labels>
+  <labels>
+    <fullName>Class_type_Batchable</fullName>
+    <categories>class type</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Class type - Batchable</shortDescription>
+    <value>Batchable</value>
+  </labels>
+  <labels>
+    <fullName>Class_type_Schedulable</fullName>
+    <categories>class type</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Class type - Schedulable</shortDescription>
+    <value>Schedulable</value>
+  </labels>
+  <labels>
+    <fullName>Clear_class_search</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Clear class search</shortDescription>
+    <value>Clear</value>
+  </labels>
+  <labels>
+    <fullName>Code_remaining</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Code remaining</shortDescription>
+    <value>Characters remaining</value>
+  </labels>
+  <labels>
+    <fullName>Confirm</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Confirm</shortDescription>
+    <value>Confirm</value>
+  </labels>
+  <labels>
+    <fullName>Daily_end_date</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Daily end date</shortDescription>
+    <value>Until when? (leave blank to run in perpetuity)</value>
+  </labels>
+  <labels>
+    <fullName>End_date_time</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>End date &amp; time</shortDescription>
+    <value>Until when? (leave blank to run in perpetuity)</value>
+  </labels>
+  <labels>
+    <fullName>Enter_code</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Enter code</shortDescription>
+    <value>Enter your anonymous code</value>
+  </labels>
+  <labels>
+    <fullName>Flow_retrieval_error</fullName>
+    <categories>error</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Flow retrieval error</shortDescription>
+    <value>There was an error retrieving flows.</value>
+  </labels>
+  <labels>
+    <fullName>Flow_warning</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Flow warning</shortDescription>
+    <value>You may not have permission to run all the listed flows. It is possible for System Adminstrator permissions to be removed from an individual flow.</value>
+  </labels>
+  <labels>
+    <fullName>Main_choice</fullName>
+    <categories>main choice</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Main choice</shortDescription>
+    <value>What do you want to schedule?</value>
+  </labels>
+  <labels>
+    <fullName>Main_choice_class</fullName>
+    <categories>main choice</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Main choice class</shortDescription>
+    <value>A class</value>
+  </labels>
+  <labels>
+    <fullName>Main_choice_code</fullName>
+    <categories>main choice</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Main choice code</shortDescription>
+    <value>Anonymous code</value>
+  </labels>
+  <labels>
+    <fullName>Main_choice_flow</fullName>
+    <categories>main choice</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Main choice flow</shortDescription>
+    <value>A flow</value>
+  </labels>
+  <labels>
+    <fullName>Max_code_entered</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Max code entered</shortDescription>
+    <value>You have entered the maximum amount of code.</value>
+  </labels>
+  <labels>
+    <fullName>Missing_permission_set</fullName>
+    <categories>error</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Missing_permission_set</shortDescription>
+    <value>You do not have the required permission set to use the Schedul-o-matic 9000</value>
+  </labels>
+  <labels>
+    <fullName>No_flows</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>No flows</shortDescription>
+    <value>There are no flows to schedule!</value>
+  </labels>
+  <labels>
+    <fullName>Remove_class</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Remove clas</shortDescription>
+    <value>Remove selected class</value>
+  </labels>
+  <labels>
+    <fullName>Repeat_interval</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Repeat interval</shortDescription>
+    <value>How often (in minutes) would you like to repeat this job? (enter 0 to run once)</value>
+  </labels>
+  <labels>
+    <fullName>Repeat_interval_underflow</fullName>
+    <categories>input validation</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Repeat interval underflow</shortDescription>
+    <value>Repeat interval must be zero or greater.</value>
+  </labels>
+  <labels>
+    <fullName>Required_field</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Required field</shortDescription>
+    <value>Complete this field.</value>
+  </labels>
+  <labels>
+    <fullName>Reschedule_interval</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Reschedule interval</shortDescription>
+    <value>How soon (in minutes) would you like to retry this job if the queue is full or if the batch job is not done executing?</value>
+  </labels>
+  <labels>
+    <fullName>Reschedule_interval_underflow</fullName>
+    <categories>input validation</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Reschedule interval underflow</shortDescription>
+    <value>Reschedule interval must be a positive whole number.</value>
+  </labels>
+  <labels>
+    <fullName>Schedule</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Schedule</shortDescription>
+    <value>Schedule</value>
+  </labels>
+  <labels>
+    <fullName>Select_class</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Select class</shortDescription>
+    <value>What class would you like to schedule?</value>
+  </labels>
+  <labels>
+    <fullName>Select_flow</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Select flow</shortDescription>
+    <value>What flow would you like to schedule?</value>
+  </labels>
+  <labels>
+    <fullName>Spinner_alt_text_loading</fullName>
+    <categories>class type</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Spinner alt text - loading</shortDescription>
+    <value>Loading...</value>
+  </labels>
+  <labels>
+    <fullName>Spinner_alt_text_scheduling</fullName>
+    <categories>class type</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Spinner alt text - scheduling</shortDescription>
+    <value>Scheduling...</value>
+  </labels>
+  <labels>
+    <fullName>Spinner_alt_text_searching</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Spinner alt text - searching</shortDescription>
+    <value>Searching...</value>
+  </labels>
+  <labels>
+    <fullName>Start_again_the_next_day</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Start again the next day</shortDescription>
+    <value>Run daily?</value>
+  </labels>
+  <labels>
+    <fullName>Start_date_time</fullName>
+    <categories>form element</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Start date &amp; time</shortDescription>
+    <value>When would you like the job to start?</value>
+  </labels>
+  <labels>
+    <fullName>Start_time_passed</fullName>
+    <categories>error</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Start time passed</shortDescription>
+    <value>Your start date &amp; time has passed!</value>
+  </labels>
+  <labels>
+    <fullName>Toast_success_message</fullName>
+    <categories>toast</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Toast success message</shortDescription>
+    <value>Job scheduled successfully!</value>
+  </labels>
+  <labels>
+    <fullName>Toast_success_title</fullName>
+    <categories>toast</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Toast success title</shortDescription>
+    <value>Success</value>
+  </labels>
+  <labels>
+    <fullName>View_Apex_jobs</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>View Apex jobs</shortDescription>
+    <value>View Apex jobs</value>
+  </labels>
+  <labels>
+    <fullName>View_records</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>View scheduled entries</shortDescription>
+    <value>View Schedul-o-matic entries</value>
+  </labels>
+  <labels>
+    <fullName>View_scheduled_jobs</fullName>
+    <categories>links</categories>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>View scheduled jobs</shortDescription>
+    <value>View Scheduled jobs</value>
+  </labels>
+</CustomLabels>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+  <brand>
+    <headerColor>#0070D2</headerColor>
+    <logo>picklelogo</logo>
+    <logoVersion>1</logoVersion>
+    <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+  </brand>
+  <description>Not your mother&#39;s Salesforce scheduler</description>
+  <formFactors>Small</formFactors>
+  <formFactors>Large</formFactors>
+  <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+  <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+  <label>Schedul-o-matic 9000</label>
+  <navType>Standard</navType>
+  <tabs>Schedul_o_matic_9000</tabs>
+  <tabs>SchedulomaticEntry__c</tabs>
+  <uiType>Lightning</uiType>
+  <utilityBar>Schedul_o_matic_9000_UtilityBar</utilityBar>
+</CustomApplication>

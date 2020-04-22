@@ -1,0 +1,144 @@
+<!--
+  Copyright (c) 2020, salesforce.com, inc.
+  All rights reserved.
+  SPDX-License-Identifier: BSD-3-Clause
+  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<template>
+  <div class="lookup-container">
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for={inputForId}>
+        {label.Select_class}
+      </label>
+
+      <div class="slds-form-element__control">
+        <div class={hasSelectionClass}>
+          <div
+            class={showOptionsClass}
+            aria-expanded={ariaExpandedShowOptionsClass}
+            aria-haspopup="listbox"
+            role="combobox"
+          >
+            <div class={iconClass} role="none">
+              <template if:true={selectedOption.value}>
+                <span
+                  class="slds-icon_container slds-combobox__input-entity-icon"
+                >
+                  <lightning-icon
+                    if:true={selectedOption.batchable}
+                    class="slds-media__figure slds-listbox__option-icon"
+                    icon-name="utility:overflow"
+                    size="small"
+                    alternative-text={label.Class_type_Batchable}
+                  ></lightning-icon>
+
+                  <lightning-icon
+                    if:true={selectedOption.schedulable}
+                    class="slds-media__figure slds-listbox__option-icon"
+                    icon-name="utility:clock"
+                    size="small"
+                    alternative-text={label.Class_type_Schedulable}
+                  ></lightning-icon>
+                </span>
+
+                <input
+                  id="class-selected-combobox"
+                  class="slds-input slds-combobox__input slds-combobox__input-value"
+                  autocomplete="off"
+                  role="textbox"
+                  type="text"
+                  placeholder=""
+                  readonly
+                  value={selectedOption.value}
+                  onkeydown={handleReadonlyKeydown}
+                />
+                <button
+                  class="removeSelected slds-button slds-button_icon slds-input__icon slds-input__icon_right"
+                  title="Remove selected option"
+                  onclick={handleRemove}
+                >
+                  <lightning-icon
+                    icon-name="utility:close"
+                    size="x-small"
+                  ></lightning-icon>
+
+                  <span class="slds-assistive-text">
+                    {label.Remove_class}
+                  </span>
+                </button>
+              </template>
+
+              <template if:false={selectedOption.value}>
+                <input
+                  id="class-not-selected-combobox"
+                  aria-activedescendant=""
+                  class={noSelectedOptionClass}
+                  aria-autocomplete="list"
+                  autocomplete="off"
+                  role="textbox"
+                  type="text"
+                  placeholder={label.Class_input_placeholder}
+                  value={searchTerm}
+                  oninput={handleInput}
+                  onfocus={handleOnFocus}
+                  onblur={handleOnBlur}
+                  onkeydown={handleKeyDown}
+                />
+
+                <div
+                  class="slds-input__icon-group slds-input__icon-group_right"
+                >
+                  <div role="status" class={searchSpinnerClass}>
+                    <span class="slds-assistive-text">{label.Spinner_alt_text_searching}</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                  </div>
+                  <button
+                    class={clearButtonClass}
+                    title="Clear"
+                    onclick={handleClearInput}
+                  >
+                    <svg class="slds-button__icon" aria-hidden="true">
+                      <use
+                        xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#close"
+                      ></use>
+                    </svg>
+                    <span class="slds-assistive-text">Clear</span>
+                  </button>
+                </div>
+              </template>
+            </div>
+
+            <div
+              class="listbox slds-dropdown slds-dropdown_fluid slds-dropdown_length-with-icon-5"
+              role="listbox"
+            >
+              <ul
+                class="slds-listbox slds-listbox_vertical"
+                role="presentation"
+              >
+                <template for:each={searchOptions} for:item="item">
+                  <li
+                    role="presentation"
+                    class="slds-listbox__item"
+                    key={item.value}
+                  >
+                    <c-class-lookup-option
+                      id={item.value}
+                      item={item}
+                      data-option={item.value}
+                      active-option={activeOption}
+                      onoptionselected={handleOptionSelected}
+                      onoptionactivated={handleOptionActivated}
+                    ></c-class-lookup-option>
+                  </li>
+                </template>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

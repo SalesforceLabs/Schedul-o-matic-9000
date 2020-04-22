@@ -1,0 +1,290 @@
+<!--
+  Copyright (c) 2020, salesforce.com, inc.
+  All rights reserved.
+  SPDX-License-Identifier: BSD-3-Clause
+  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<template>
+  <lightning-card>
+    <lightning-spinner
+      if:true={showSpinner}
+      alternative-text={spinnerAltText}
+    ></lightning-spinner>
+
+    <div slot="title">
+      <lightning-layout>
+        <lightning-layout-item>
+          <lightning-icon src={schedulerIcon}></lightning-icon>
+        </lightning-layout-item>
+
+        <lightning-layout-item class="card-title">
+          {TITLE}
+        </lightning-layout-item>
+      </lightning-layout>
+    </div>
+
+    <div class="card-body">
+      <div if:true={noPermiso} class="noPermiso">
+        <img src={missingPermissionsImage} alt={label.Missing_permission_set} />
+      </div>
+
+      <template if:true={initSuccess}>
+        <h3 class="slds-text-heading_medium">{label.Main_choice}</h3>
+
+        <lightning-tabset>
+          <template for:each={mainOptions} for:item="tab">
+            <lightning-tab
+              label={tab.label}
+              key={tab.value}
+              value={tab.value}
+              onactive={handleMainOptionChange}
+            >
+              <template if:true={isClass}>
+                <c-class-lookup
+                  onoptionselected={handleClassSelected}
+                ></c-class-lookup>
+              </template>
+
+              <template if:true={isFlow}>
+                <template if:true={showFlowFilter}>
+                  <div class="flowWarning">
+                    {label.Flow_warning}
+                  </div>
+
+                  <template if:true={onDesktop}>
+                    <lightning-combobox
+                      label={label.Select_flow}
+                      class="formElement-flowSelect"
+                      options={flows}
+                      onchange={handleDesktopFlowChange}
+                      value={selectedFlow}
+                    ></lightning-combobox>
+                  </template>
+
+                  <template if:false={onDesktop}>
+                    <div class="slds-form-element formElement-flowSelect">
+                      <label class="slds-form-element__label" for="flows">
+                        {label.Select_flow}
+                        <div class="slds-form-element__control">
+                          <div class="slds-select_container">
+                            <select
+                              class="slds-select"
+                              onchange={handleMobileFlowChange}
+                            >
+                              <template for:each={flows} for:item="f">
+                                <option key={f.value} value={f.value}
+                                  >{f.label}</option
+                                >
+                              </template>
+                            </select>
+                          </div>
+                        </div>
+                      </label>
+                    </div>
+                  </template>
+                </template>
+
+                <div class="noFlows" if:false={showFlowFilter}>
+                  {label.No_flows}
+                </div>
+              </template>
+
+              <template if:true={isCode}>
+                <div class="codeWarning">
+                  {label.Anonymous_code_warning}
+                </div>
+
+                <div class={codeElementClass}>
+                  <lightning-textarea
+                    label={label.Enter_code}
+                    class="code-textarea"
+                    min-length="1"
+                    max-length={MAX_CODE_LENGTH}
+                    onchange={handleCodeChange}
+                    required
+                    value={body}
+                  >
+                  </lightning-textarea>
+                </div>
+
+                <div if:true={codeBlockFull} class="codeBlockFull">
+                  {label.Max_code_entered}
+                </div>
+
+                <div class="codeRemaining">
+                  {label.Code_remaining}: {remainingCode}
+                </div>
+              </template>
+
+              <template if:true={showForm}>
+                <lightning-input
+                  type="datetime"
+                  label={label.Start_date_time}
+                  class={startDatetimeClass}
+                  autocomplete="off"
+                  onchange={handleStartDateTimeChange}
+                  value={startDateTime}
+                  message-when-value-missing={label.Required_field}
+                  required
+                ></lightning-input>
+
+                <lightning-input
+                  type="number"
+                  label={label.Repeat_interval}
+                  class="formElement-repeatInterval"
+                  autocomplete="off"
+                  min="0"
+                  message-when-range-underflow={Repeat_interval_underflow}
+                  onchange={handleRepeatIntervalChange}
+                  value={repeatInterval}
+                  message-when-value-missing={label.Required_field}
+                  required
+                ></lightning-input>
+
+                <lightning-input
+                  if:true={showEndDateTime}
+                  type="datetime"
+                  label={label.End_date_time}
+                  class={endDatetimeClass}
+                  autocomplete="off"
+                  onchange={handleEndDateTimeChange}
+                  value={endDateTime}
+                ></lightning-input>
+
+                <span if:true={showDaily}>
+                  <lightning-input
+                    if:true={isDaily}
+                    type="checkbox"
+                    label={label.Start_again_the_next_day}
+                    class="formElement-daily"
+                    onchange={handleDailyChange}
+                    checked
+                  ></lightning-input>
+
+                  <lightning-input
+                    if:false={isDaily}
+                    type="checkbox"
+                    label={label.Start_again_the_next_day}
+                    class="formElement-daily"
+                    onchange={handleDailyChange}
+                  ></lightning-input>
+                </span>
+
+                <lightning-input
+                  if:true={showDailyEndDate}
+                  type="date"
+                  label={label.Daily_end_date}
+                  class={dailyEndDateClass}
+                  autocomplete="off"
+                  onchange={handleDailyEndDateChange}
+                  value={dailyEndDate}
+                ></lightning-input>
+
+                <lightning-input
+                  if:true={showBatchSize}
+                  type="number"
+                  label={label.Batch_size}
+                  class="formElement-batchSize"
+                  autocomplete="off"
+                  min="1"
+                  max="2000"
+                  message-when-range-overflow={label.Batch_size_overflow}
+                  message-when-range-underflow={label.Batch_size_underflow}
+                  onchange={handleBatchSizeChange}
+                  value={batchSize}
+                ></lightning-input>
+
+                <lightning-input
+                  if:true={isClass}
+                  type="number"
+                  label={label.Reschedule_interval}
+                  class="formElement-reschedule"
+                  autocomplete="off"
+                  min="1"
+                  message-when-range-underflow={Reschedule_interval_underflow}
+                  onchange={handleRescheduleIntervalChange}
+                  value={rescheduleInterval}
+                  message-when-value-missing={label.Required_field}
+                  required
+                ></lightning-input>
+              </template>
+
+              <div if:true={onDesktop} class="links">
+                <p>
+                  <a href={entryUrl} target="_blank">
+                    {label.View_records}
+                    <span
+                      class="slds-icon_container slds-icon-utility-new_window linkIcon"
+                    >
+                      <svg
+                        class="slds-icon slds-icon_xx-small"
+                        aria-hidden="true"
+                      >
+                        <use
+                          xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#new_window"
+                        ></use>
+                      </svg>
+                    </span>
+                  </a>
+                </p>
+
+                <p>
+                  <a href={SCHEDULED_JOBS_URL} target="_blank">
+                    {label.View_scheduled_jobs}
+                    <span
+                      class="slds-icon_container slds-icon-utility-new_window linkIcon"
+                    >
+                      <svg
+                        class="slds-icon slds-icon_xx-small"
+                        aria-hidden="true"
+                      >
+                        <use
+                          xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#new_window"
+                        ></use>
+                      </svg>
+                    </span>
+                  </a>
+                </p>
+
+                <p>
+                  <a href={APEX_JOBS_URL} target="_blank">
+                    {label.View_Apex_jobs}
+                    <span
+                      class="slds-icon_container slds-icon-utility-new_window linkIcon"
+                    >
+                      <svg
+                        class="slds-icon slds-icon_xx-small"
+                        aria-hidden="true"
+                      >
+                        <use
+                          xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#new_window"
+                        ></use>
+                      </svg>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </lightning-tab>
+          </template>
+        </lightning-tabset>
+      </template>
+    </div>
+
+    <template if:true={initSuccess}>
+      <div if:true={showForm} class="slds-card__footer">
+        <lightning-button-menu
+          alternative-text={label.Schedule}
+          label={label.Schedule}
+          disabled={scheduleDisabled}
+          onselect={schedule}
+        >
+          <lightning-menu-item
+            value="true"
+            label={label.Confirm}
+          ></lightning-menu-item>
+        </lightning-button-menu>
+      </div>
+    </template>
+  </lightning-card>
+</template>

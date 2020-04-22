@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Is_Class_Flow_or_Code</fullName>
+  <active>true</active>
+  <errorConditionFormula>IF(ISBLANK(Class__c), 0, 1) +
+IF(ISBLANK(Flow__c), 0, 1) +
+IF(ISBLANK(AnonymousCode__c), 0, 1)
+!= 1</errorConditionFormula>
+  <errorMessage>An entry must include either a class, a flow, or an anonymous code block.</errorMessage>
+</ValidationRule>

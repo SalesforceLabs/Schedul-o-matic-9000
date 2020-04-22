@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Is_Class_and_Batchable_or_Schedulable</fullName>
+  <active>true</active>
+  <errorConditionFormula>NOT(ISBLANK(Class__c )) &amp;&amp;
+(
+  IsBatchable__c &amp;&amp; IsSchedulable__c ||
+  !IsBatchable__c &amp;&amp; !IsSchedulable__c
+)</errorConditionFormula>
+  <errorMessage>A class must be either batchable or schedulable.</errorMessage>
+</ValidationRule>

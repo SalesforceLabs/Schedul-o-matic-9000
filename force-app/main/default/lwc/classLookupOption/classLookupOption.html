@@ -1,0 +1,39 @@
+<!--
+  Copyright (c) 2020, salesforce.com, inc.
+  All rights reserved.
+  SPDX-License-Identifier: BSD-3-Clause
+  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<template>
+  <div
+    class={optionClass}
+    role="option"
+    onclick={handleClick}
+    onmouseenter={handleMouseEnter}
+    onmouseleave={handleMouseLeave}
+    aria-selected={ariaSelectedClass}
+  >
+    <lightning-icon
+      if:true={item.batchable}
+      class="slds-media__figure slds-listbox__option-icon"
+      icon-name="utility:overflow"
+      size="small"
+      alternative-text={label.Class_type_Batchable}
+    ></lightning-icon>
+
+    <lightning-icon
+      if:true={item.schedulable}
+      class="slds-media__figure slds-listbox__option-icon"
+      icon-name="utility:clock"
+      size="small"
+      alternative-text={label.Class_type_Schedulable}
+    ></lightning-icon>
+
+    <span class="slds-media__body">
+      <span class="apexClassName slds-truncate" title={item.label}>
+        {item.pre}<mark>{item.mark}</mark>{item.post}
+      </span>
+    </span>
+  </div>
+</template>

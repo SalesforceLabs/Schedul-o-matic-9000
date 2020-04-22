@@ -1,0 +1,18 @@
+{
+  "edition": "Developer",
+  "features": ["DebugApex"],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "securitySettings": {
+      "enableAdminLoginAsAnyUser": true,
+      "passwordPolicies": {
+        "enableSetPasswordInApi": true
+      },
+      "sessionSettings": {
+        "forceRelogin": false
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "package": "Schedul-o-matic 9000",
+      "versionNumber": "0.3.0.0"
+    }
+  ],
+  "namespace": "dcstuff",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "48.0",
+  "packageAliases": {
+    "Schedul-o-matic 9000": "0Ho1Q000000k9d9SAA",
+    "Schedul-o-matic 9000@0.1.0-1": "04t1Q000001E4djQAC",
+    "Schedul-o-matic 9000@0.1.0-2": "04t1Q000001E4dyQAC",
+    "Schedul-o-matic 9000@0.2.0-0": "04t1Q000001E4e3QAC",
+    "Schedul-o-matic 9000@0.3.0-0": "04t1Q000001E4e8QAC"
+  }
+}

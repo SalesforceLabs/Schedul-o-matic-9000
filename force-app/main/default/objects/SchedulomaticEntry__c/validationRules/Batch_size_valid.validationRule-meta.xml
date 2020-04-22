@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Batch_size_valid</fullName>
+  <active>true</active>
+  <errorConditionFormula>NOT(ISBLANK(BatchSize__c)) &amp;&amp;
+(
+  BatchSize__c &lt; 1 ||
+  BatchSize__c != FLOOR(BatchSize__c)
+)</errorConditionFormula>
+  <errorDisplayField>BatchSize__c</errorDisplayField>
+  <errorMessage>Batch size must be blank (to use the Salesforce default) or a positive whole number.</errorMessage>
+</ValidationRule>

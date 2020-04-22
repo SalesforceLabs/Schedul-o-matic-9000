@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Reschedule_interval_valid</fullName>
+  <active>true</active>
+  <errorConditionFormula>NOT(ISBLANK(Class__c)) &amp;&amp;
+(
+  ISBLANK(RescheduleInterval__c) ||
+  RescheduleInterval__c &lt; 1 ||
+  FLOOR(RescheduleInterval__c) !=  RescheduleInterval__c
+)</errorConditionFormula>
+  <errorDisplayField>RescheduleInterval__c</errorDisplayField>
+  <errorMessage>Reschedule interval must be a positive whole number.</errorMessage>
+</ValidationRule>

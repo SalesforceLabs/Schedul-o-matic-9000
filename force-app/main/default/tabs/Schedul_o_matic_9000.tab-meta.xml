@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+  <description>Not your mother&#39;s Salesforce scheduler</description>
+  <icon>icons/schedule.jpg</icon>
+  <label>Schedul-o-matic 9000</label>
+  <lwcComponent>scheduler</lwcComponent>
+  <motif>Custom205: TV Widescreen</motif>
+</CustomTab>

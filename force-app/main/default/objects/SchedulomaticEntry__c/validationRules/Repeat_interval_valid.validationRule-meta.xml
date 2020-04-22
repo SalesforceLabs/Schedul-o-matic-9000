@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fullName>Repeat_interval_valid</fullName>
+  <active>true</active>
+  <errorConditionFormula>RepeatInterval__c &lt; 0 || FLOOR(RepeatInterval__c) != RepeatInterval__c</errorConditionFormula>
+  <errorDisplayField>RepeatInterval__c</errorDisplayField>
+  <errorMessage>Repeat interval must either be left empty (to run once) or a positive whole number.</errorMessage>
+</ValidationRule>
