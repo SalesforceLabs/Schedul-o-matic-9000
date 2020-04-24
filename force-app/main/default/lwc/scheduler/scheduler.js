@@ -357,9 +357,9 @@ export default class Scheduler extends NavigationMixin(LightningElement) {
         f => f.value === this.selectedFlow
       ).NamespacePrefix;
 
-      if (flowNamespacePrefix) {
-        flowName = `${flowNamespacePrefix}__${this.selectedFlow}`;
-      }
+      flowName = `${flowNamespacePrefix ? `${flowNamespacePrefix}__` : ""}${
+        this.selectedFlow
+      }`;
     } else if (this.isCode) {
       jobName = this.label.Anonymous_code_job_prefix;
     }
