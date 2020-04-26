@@ -335,7 +335,9 @@ export default class Scheduler extends NavigationMixin(LightningElement) {
         (!this.dailyEndDateValid || this.startDateTime >= this.dailyEndDate)) ||
       (this.showBatchSize &&
         (!this.batchSizeValid || !this.rescheduleIntervalValid)) ||
-      (this.isCode && !this.codeValid)
+      (this.isCode && !this.codeValid) ||
+      (this.isClass && !this.selectedClass.value) ||
+      (this.isFlow && !this.selectedFlow)
     );
   }
 

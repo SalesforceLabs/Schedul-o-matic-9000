@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
- import { LightningElement } from "lwc";
+import { LightningElement, api } from "lwc";
 
 import { showToast } from "c/schedulerUtils";
 
@@ -29,7 +29,16 @@ export default class ClassLookup extends LightningElement {
   formFactor = CLIENT_FORM_FACTOR;
   label = labels;
 
-  selectedOption = {};
+  @api
+  get selectedClass() {
+    return this.selectedOption;
+  }
+
+  set selectedClass(value) {
+    this.selectedOption = value;
+  }
+
+  selectedOption;
   showOptions;
   searchOptions = [];
   hasFocus = false;

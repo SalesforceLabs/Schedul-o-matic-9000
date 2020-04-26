@@ -42,6 +42,7 @@
             >
               <template if:true={isClass}>
                 <c-class-lookup
+                  selected-class={selectedClass}
                   onoptionselected={handleClassSelected}
                 ></c-class-lookup>
               </template>

@@ -57,7 +57,7 @@ describe("c-class-lookup", () => {
       is: ClassLookup
     });
 
-    element.selectedOption = {};
+    element.selectedClass = {};
     document.body.appendChild(element);
 
     const inputEl = element.shadowRoot.querySelector("input");
@@ -71,7 +71,7 @@ describe("c-class-lookup", () => {
       is: ClassLookup
     });
 
-    element.selectedOption = {};
+    element.selectedClass = {};
     document.body.appendChild(element);
 
     const inputEl = element.shadowRoot.querySelector("input");
@@ -91,7 +91,7 @@ describe("c-class-lookup", () => {
       is: ClassLookup
     });
 
-    element.selectedOption = {};
+    element.selectedClass = {};
     document.body.appendChild(element);
 
     const inputEl = element.shadowRoot.querySelector("input");
@@ -114,7 +114,7 @@ describe("c-class-lookup", () => {
       is: ClassLookup
     });
 
-    element.selectedOption = {};
+    element.selectedClass = {};
     element.addEventListener("optionselected", mockOptionSelectedHandler);
     document.body.appendChild(element);
 
@@ -219,7 +219,7 @@ describe("c-class-lookup", () => {
       is: ClassLookup
     });
 
-    element.selectedOption = {};
+    element.selectedClass = {};
     document.body.appendChild(element);
 
     const inputEl = element.shadowRoot.querySelector("input");
