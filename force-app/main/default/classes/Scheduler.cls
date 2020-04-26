@@ -169,7 +169,7 @@ public with sharing class Scheduler implements Schedulable {
     Integer indexOfSearchTerm = fullName.indexOfIgnoreCase(searchTerm);
 
     m.put(classType, 'true');
-    m.put('value', fullName + '___' + classType);
+    m.put('value', fullName);
     m.put('fullName', fullName);
     m.put('namespacePrefix', namespacePrefix);
     m.put('pre', fullName.substring(0, indexOfSearchTerm));
