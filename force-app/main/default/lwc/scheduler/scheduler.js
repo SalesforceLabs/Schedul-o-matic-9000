@@ -333,9 +333,8 @@ export default class Scheduler extends NavigationMixin(LightningElement) {
       (this.isDaily &&
         this.showDaily &&
         (!this.dailyEndDateValid || this.startDateTime >= this.dailyEndDate)) ||
-      (!this.batchSizeValid && this.showBatchSize) ||
-      (this.isClass &&
-        (!this.selectedClass.value || !this.rescheduleIntervalValid)) ||
+      (this.showBatchSize &&
+        (!this.batchSizeValid || !this.rescheduleIntervalValid)) ||
       (this.isCode && !this.codeValid)
     );
   }
@@ -389,9 +388,7 @@ export default class Scheduler extends NavigationMixin(LightningElement) {
       ? this.repeatInterval
       : null;
     fields[RESCHEDULE_FIELD.fieldApiName] =
-      this.isClass && this.rescheduleInterval > 0
-        ? this.rescheduleInterval
-        : null;
+      this.isClass && this.showBatchSize ? this.rescheduleInterval : null;
     fields[START_FIELD.fieldApiName] = this.startDateTime;
 
     const recordInput = { apiName: ENTRY_OBJECT.objectApiName, fields };

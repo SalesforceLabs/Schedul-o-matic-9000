@@ -353,12 +353,12 @@ public with sharing class Scheduler implements Schedulable {
   Boolean canStartMore() {
     if (
       String.isNotBlank(entry.AnonymousCode__c) ||
-      String.isNotBlank(entry.Flow__c)
+      String.isNotBlank(entry.Flow__c) ||
+      entry.IsSchedulable__c
     ) {
       return true;
     }
 
-    if (entry.IsBatchable__c) {
       if (String.isNotBlank(entry.AsyncApexJobId__c)) {
         AsyncApexJob jobInfo = [
           SELECT Status
@@ -377,16 +377,6 @@ public with sharing class Scheduler implements Schedulable {
           WHERE JobType = 'BatchApex' AND Status = 'Holding'
         ] < MAX_BATCH_JOBS;
     }
-
-    return [
-        SELECT COUNT()
-        FROM CronTrigger
-        WHERE
-          (State IN ('WAITING', 'ACQUIRED', 'EXECUTING')
-          OR NextFireTime != null)
-          AND CronJobDetail.JobType = :SCHEDULED_APEX_JOB_TYPE
-      ] < MAX_SCHEDULED_JOBS;
-  }
 
   void executeJob() {
     if (String.isNotBlank(entry.Class__c)) {
