@@ -164,7 +164,8 @@ public with sharing class Scheduler implements Schedulable {
     String name
   ) {
     String fullName = namespacePrefix == null
-      ? name : namespacePrefix + '__' + name;
+      ? name
+      : namespacePrefix + '__' + name;
     Integer searchTermLength = searchTerm.length();
     Integer indexOfSearchTerm = fullName.indexOfIgnoreCase(searchTerm);
 
@@ -190,7 +191,8 @@ public with sharing class Scheduler implements Schedulable {
 
   static String getLwcSessionId() {
     return Test.isRunningTest()
-      ? '' : Page.SchedulerHelper.getContent().toString().trim();
+      ? ''
+      : Page.SchedulerHelper.getContent().toString().trim();
   }
 
   static HttpResponse sendHttpRequest(String path, String sessionId) {
@@ -294,7 +296,8 @@ public with sharing class Scheduler implements Schedulable {
         }
 
         classToExecute = Test.isRunningTest()
-          ? BATCHABLE_TYPE : Type.forName(namespacePrefix, name);
+          ? BATCHABLE_TYPE
+          : Type.forName(namespacePrefix, name);
 
         if (classToExecute == null) {
           logExecutionError(entry.Id, EXECUTION_ERROR_INVALID_CLASS);
@@ -359,24 +362,24 @@ public with sharing class Scheduler implements Schedulable {
       return true;
     }
 
-      if (String.isNotBlank(entry.AsyncApexJobId__c)) {
-        AsyncApexJob jobInfo = [
-          SELECT Status
-          FROM AsyncApexJob
-          WHERE Id = :entry.AsyncApexJobId__c
-        ];
+    if (String.isNotBlank(entry.AsyncApexJobId__c)) {
+      AsyncApexJob jobInfo = [
+        SELECT Status
+        FROM AsyncApexJob
+        WHERE Id = :entry.AsyncApexJobId__c
+      ];
 
-        if (!ASYNC_JOB_COMPLETED_STATUSES.containsIgnoreCase(jobInfo.Status)) {
-          return false;
-        }
+      if (!ASYNC_JOB_COMPLETED_STATUSES.containsIgnoreCase(jobInfo.Status)) {
+        return false;
       }
-
-      return [
-          SELECT COUNT()
-          FROM AsyncApexJob
-          WHERE JobType = 'BatchApex' AND Status = 'Holding'
-        ] < MAX_BATCH_JOBS;
     }
+
+    return [
+        SELECT COUNT()
+        FROM AsyncApexJob
+        WHERE JobType = 'BatchApex' AND Status = 'Holding'
+      ] < MAX_BATCH_JOBS;
+  }
 
   void executeJob() {
     if (String.isNotBlank(entry.Class__c)) {
@@ -443,7 +446,11 @@ public with sharing class Scheduler implements Schedulable {
 
     Flow.Interview f = nameParts.size() == 0
       ? Flow.Interview.createInterview(nameParts[0], new Map<String, Object>())
-      : Flow.Interview.createInterview(nameParts[0], nameParts[1], new Map<String, Object>());
+      : Flow.Interview.createInterview(
+          nameParts[0],
+          nameParts[1],
+          new Map<String, Object>()
+        );
     f.start();
   }
 
@@ -459,7 +466,8 @@ public with sharing class Scheduler implements Schedulable {
   @TestVisible
   void incrementExecutions() {
     entry.NumberOfExecutions__c = entry.NumberOfExecutions__c == null
-      ? 1 : entry.NumberOfExecutions__c + 1;
+      ? 1
+      : entry.NumberOfExecutions__c + 1;
   }
 
   @TestVisible
