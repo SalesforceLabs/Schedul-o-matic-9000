@@ -301,16 +301,17 @@ export default class ClassLookup extends LightningElement {
   }
 
   selectOption() {
-    const selectedValue = this.activeOption;
-    const onlyMatchingOptions = this.searchOptions.filter(
-      option => option.value === selectedValue
-    );
-    this.selectedOption = onlyMatchingOptions[0];
-    this.searchOptions = [];
-    this.showOptions = false;
-    this.inputForId = INPUT_FOR_ID_SELECTED;
-    this.searchTerm = "";
-    this.fireLookupOptionSelected();
+    if (this.activeOption) {
+      const onlyMatchingOptions = this.searchOptions.filter(
+        option => option.value === this.activeOption
+      );
+      this.selectedOption = onlyMatchingOptions[0];
+      this.searchOptions = [];
+      this.showOptions = false;
+      this.inputForId = INPUT_FOR_ID_SELECTED;
+      this.searchTerm = "";
+      this.fireLookupOptionSelected();
+    }
   }
 
   fireLookupOptionSelected() {
