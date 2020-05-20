@@ -4,7 +4,7 @@
       "path": "force-app",
       "default": true,
       "package": "Schedul-o-matic 9000",
-      "versionNumber": "0.7.0.0"
+      "versionNumber": "0.8.0.0"
     }
   ],
   "namespace": "dcstuff",
@@ -19,6 +19,7 @@
     "Schedul-o-matic 9000@0.4.0-0": "04t1Q000001IEhDQAW",
     "Schedul-o-matic 9000@0.5.0-0": "04t1Q000001IEhIQAW",
     "Schedul-o-matic 9000@0.6.0-0": "04t1Q000001IEhNQAW",
-    "Schedul-o-matic 9000@0.7.0-0": "04t1Q000001IEoPQAW"
+    "Schedul-o-matic 9000@0.7.0-0": "04t1Q000001IEoPQAW",
+    "Schedul-o-matic 9000@0.8.0-0": "04t1Q000001IEojQAG"
   }
 }

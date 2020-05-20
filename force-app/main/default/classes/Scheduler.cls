@@ -79,7 +79,7 @@ public with sharing class Scheduler implements Schedulable {
 
   @AuraEnabled
   public static List<Object> getClasses(String searchTerm) {
-    String newSearchTerm = '%' + searchTerm + '%';
+    String newSearchTerm = '%' + String.escapeSingleQuotes(searchTerm) + '%';
 
     List<Map<String, String>> classObjects = new List<Map<String, String>>();
     Savepoint sp = Database.setSavepoint();
