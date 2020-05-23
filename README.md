@@ -10,7 +10,7 @@ You can also schedule flows and... wait for it... wait for it... you can also sc
 
 Watch the highlights on the Youtube. The pickle is your friend (unless you make him angry. You won't like him when he's angry.)
 
-[![Youtube link to Schedul-o-matic 9000](http://img.youtube.com/vi/fX3KiqsyT6k/0.jpg)](http://www.youtube.com/watch?v=c_KeluilBcs)
+[![Youtube link to Schedul-o-matic 9000](http://img.youtube.com/vi/fX3KiqsyT6k/0.jpg)](http://www.youtube.com/watch?v=fX3KiqsyT6k)
 
 ## Installation ##
 
