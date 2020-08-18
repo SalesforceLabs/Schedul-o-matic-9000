@@ -444,7 +444,7 @@ public with sharing class Scheduler implements Schedulable {
   static void executeFlow(String flowToExecute) {
     List<String> nameParts = flowToExecute.split('__');
 
-    Flow.Interview f = nameParts.size() == 0
+    Flow.Interview f = nameParts.size() == 1
       ? Flow.Interview.createInterview(nameParts[0], new Map<String, Object>())
       : Flow.Interview.createInterview(
           nameParts[0],
