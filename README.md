@@ -55,7 +55,7 @@ Finally, the Schedul-o-matic 9000 can be added to an app's Utility Bar and be ac
 
 ## Usage ##
 
-### Scheduling classes ang general scheduling configuration ###
+### Scheduling classes and general scheduling configuration ###
 
 Typing in the class lookup box will return any matching global (or public if you've installed the package from the Git repo) classes that implement the `Batchable` and/or `Schedulable` interfaces. You must then configure when and how often you wish the code in that class to run.
 
