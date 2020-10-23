@@ -8,9 +8,9 @@ Schedule any global class that implements either the `Schedulable` or `Batchable
 
 You can also schedule flows and... wait for it... wait for it... you can also schedule blocks of anonymous code! *(WAT?!)*
 
-Watch the highlights on the Youtube. The pickle is your friend (unless you make him angry. You won't like him when he's angry.)
+Watch the highlights on the YouTube. The pickle is your friend (unless you make him angry. You won't like him when he's angry.)
 
-[![Youtube link to Schedul-o-matic 9000](http://img.youtube.com/vi/fX3KiqsyT6k/0.jpg)](http://www.youtube.com/watch?v=fX3KiqsyT6k)
+[![YouTube link to Schedul-o-matic 9000](http://img.youtube.com/vi/fX3KiqsyT6k/0.jpg)](http://www.youtube.com/watch?v=fX3KiqsyT6k)
 
 ## Installation ##
 
@@ -73,7 +73,7 @@ For batch jobs, you can input a *reschedule interval*, which determines when the
 
 The flow picker allows you to select from any “autolaunchable” flow. The remainder of the scheduling functionality works as specified in the previous section on scheduling classes.
 
-**NOTE:** System Admininstrators have the ability to deny access to individual flows to specific profiles, albeit with autolaunched flows, this is a rare use case. There is no way at present to programmatically determine whether a profile has been denied access to a flow, therefore, all autolaunched flows are available in the flow picker. If the scheduling user does not have access to the selected flow, the job will fail upon execution.
+**NOTE:** System Administrators have the ability to deny access to individual flows to specific profiles, albeit with autolaunched flows, this is a rare use case. There is no way at present to programmatically determine whether a profile has been denied access to a flow, therefore, all autolaunched flows are available in the flow picker. If the scheduling user does not have access to the selected flow, the job will fail upon execution.
 
 ### Scheduling anonymous code ###
 
@@ -85,7 +85,7 @@ Enter whatever code you desire to run into the text box. The remainder of the sc
 
 Every job scheduled in the Schedul-o-matic 9000 creates a Schedul-o-matic Entry record. You can edit the details of a scheduled job either before its initial run or inbetween runs if you have set a repeat interval.
 
-Visit the Schedul-o-matric Entries tab via the link in the component (*Desktop only*) or directly by clicking on the tab itself, visible in the Schedul-o-matic 9000 app or if you added the Schedul-o-matric Entries tab to one of your other applications.
+Visit the Schedul-o-matic Entries tab via the link in the component (*Desktop only*) or directly by clicking on the tab itself, visible in the Schedul-o-matic 9000 app or if you added the Schedul-o-matic Entries tab to one of your other applications.
 
 Editing a Schedul-o-matic Entry record allows you to change the configuration of your job for the next run, like the repeat interval, the end date and time, or even the anonymous code block.
 
