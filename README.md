@@ -73,7 +73,7 @@ For batch jobs, you can input a *reschedule interval*, which determines when the
 
 The flow picker allows you to select from any “autolaunchable” flow. The remainder of the scheduling functionality works as specified in the previous section on scheduling classes.
 
-**NOTE:** System Admininstrators have the ability to deny acccess to individual flows to specific profiles, albeit with autolaunched flows, this is a rare use case. There is no way at present to programmatically determine whether a profile has been denied access to a flow, therefore, all autolaunched flows are available in the flow picker. If the scheduling user does not have access to the selected flow, the job will fail upon execution.
+**NOTE:** System Admininstrators have the ability to deny access to individual flows to specific profiles, albeit with autolaunched flows, this is a rare use case. There is no way at present to programmatically determine whether a profile has been denied access to a flow, therefore, all autolaunched flows are available in the flow picker. If the scheduling user does not have access to the selected flow, the job will fail upon execution.
 
 ### Scheduling anonymous code ###
 
