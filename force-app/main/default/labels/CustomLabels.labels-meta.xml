@@ -166,7 +166,7 @@
     <language>en_US</language>
     <protected>true</protected>
     <shortDescription>Missing_permission_set</shortDescription>
-    <value>You do not have the required permission set to use the Schedul-o-matic 9000</value>
+    <value>You require the Schedul-o-matic 9000 User permission set!</value>
   </labels>
   <labels>
     <fullName>No_flows</fullName>

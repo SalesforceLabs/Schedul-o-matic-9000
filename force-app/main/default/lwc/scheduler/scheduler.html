@@ -26,7 +26,8 @@
 
     <div class="card-body">
       <div if:true={noPermiso} class="noPermiso">
-        <img src={missingPermissionsImage} alt={label.Missing_permission_set} />
+        <div><img src={missingPermissionsImage} alt={label.Missing_permission_set} /></div>
+        <div>{label.Missing_permission_set}</div>
       </div>
 
       <template if:true={initSuccess}>

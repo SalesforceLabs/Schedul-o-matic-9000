@@ -21,6 +21,8 @@ svg {
 
 .noPermiso {
   text-align: center;
+  font-weight: bold;
+  font-style: italic;
 }
 
 h3 {
