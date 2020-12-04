@@ -169,8 +169,10 @@
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Schedul-o-matic Entries</pluralLabel>
-    <searchLayouts />
+    <pluralLabel>Schedul-o-matic Entriess</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
